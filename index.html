@@ -10,13 +10,30 @@
 </head>
 
 <body>
-    <header class="container-fluid text-center text-warning p-5 m-0 bg-success bg-gradient">
-        <h1>A6.2 Actividad sobre: “Buttons, Buttons Groups, Badges, Progress Bars, Spinners” con Bootstrap 5.</h1>
+    <header class="text-center text-warning m-0 bg-success bg-gradient">
+        <h1 class="p-5 m-0">A6.2 Actividad sobre: “Buttons, Buttons Groups, Badges, Progress Bars, Spinners” con
+            Bootstrap
+            5.</h1>
     </header>
+    <!-- Tuve que sacar este div del header para poder hacerlo sticky, de lo contrario tenía que hacer sticky el header al completo. -->
+    <div class="sticky-top m-0">
+        <div class="progress">
+            <div id="progreso" class="progress-bar progress-bar-striped progress-bar-animated bg-danger"></div>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var altura = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var progreso = (scroll / altura) * 100;
+            document.getElementById("progreso").style.width = progreso + "%";
+        }
+    </script>
 
     <main>
         <div class="container-fluid bg-light">
-            <article class="row p-3">
+            <article id="BotonesBasicos" class="row p-3">
                 <h2>Botones básicos</h2>
                 <section class="col-6 p-2">
                     <button type="button" class="m-2 btn btn-primary">Botón Primary</button>
@@ -25,18 +42,22 @@
                     <button type="button" class="m-2 btn btn-info btn-lg">Botón Info Large</button>
                 </section>
                 <section class="col-6 p-2">
-                    <div class="row">
-                        <button type="button" class="m-2 btn btn-warning btn-block btn-lg">
-                            <span class="col-3 spinner-border spinner-border-sm"></span>
-                            <span class="col-9">Botón Warning<br>Block Large</span>
-                        </button>
-                        <button type="button" class="m-2 btn btn-danger btn-block btn-sm disabled">Botón Danger<br>Block
-                            Disabled</button>
-                    </div>
+                    <button type="button" class="m-2 btn btn-warning btn-block btn-lg">
+                        <div class="row">
+                            <div class="col-3 my-auto">
+                                <span class="spinner-border spinner-border text-muted"></span>
+                            </div>
+                            <div class="col-9">
+                                <span>Botón Warning<br>Block Large</span>
+                            </div>
+                        </div>
+                    </button>
+                    <button type="button" class="m-2 btn btn-danger btn-block btn-sm disabled">Botón Danger<br>Block
+                        Disabled</button>
                 </section>
             </article>
 
-            <article class="row p-3">
+            <article id="GruposDeBotones" class="row p-3">
                 <h2>Grupos de botones</h2>
                 <section class="p-2">
                     <div class="mt-2 btn-group">
@@ -77,10 +98,50 @@
                 </section>
             </article>
 
-            <article class="row p-3">
+            <article id="Badges" class="row p-3">
                 <h2>Badges</h2>
                 <section class="p-2">
-                    <button type="button" class="btn btn-primary">Mensaje<span class="badge bg-danger">4</span></button>
+                    <div class="d-flex flex-column flex-lg-row justify-content-around">
+                        <button type="button" class="btn btn-primary m-1">Mensajes<span class="ms-2 badge bg-danger">4
+                                </sp>
+                        </button>
+                        <button type="button" class="btn btn-info m-1">Notificaciones<span
+                                class="ms-2 badge bg-danger">32
+                                </sp></button>
+                        <button type="button" class="btn btn-dark m-1">Alertas<span class="ms-2 badge bg-danger">1</sp>
+                        </button>
+                        <button type="button" class="btn btn-danger m-1">Avisos<span
+                                class="ms-2 badge bg-warning text-dark">55</sp></button>
+                        <button type="button" class="btn btn-success m-1">Importante<span
+                                class="ms-2 badge bg-warning text-dark">55</sp></button>
+                    </div>
+                </section>
+            </article>
+
+            <article id="Spinners" class="row p-3">
+                <h2>Spinners</h2>
+                <section class="p-2 d-flex flex-column">
+                    <div class="m-2 spinner-border text-info"></div>
+                    <div class="m-2 spinner-border text-warning"></div>
+                    <div class="m-2 spinner-border text-danger"></div>
+                    <div class="m-2 spinner-border text-success"></div>
+                    <div class="m-2 spinner-grow text-info"></div>
+                    <div class="m-2 spinner-grow text-warning"></div>
+                    <div class="m-2 spinner-grow text-danger"></div>
+                    <div class="m-2 spinner-grow text-success"></div>
+                </section>
+            </article>
+
+            <article id="Animales" class="row p-3">
+                <h2>A continuación, algunas fotos de animales usando VSCode:</h2>
+                <h3>(Para que se pueda notar el efecto de la barra de navegación, que me costó bastante lograrlo)</h3>
+                <section class="p-2">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/caballo.jpg" alt="Un caballo usando VSCode.">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/gato.jpg" alt="Un gato usando VSCode.">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/gaviota.jpg" alt="Una gaviota usando VSCode.">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/perro.jpg" alt="Un perro usando VSCode.">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/serpiente.jpg" alt="Una serpiente usando VSCode.">
+                    <img class="rounded mx-auto d-block img-fluid w-25 my-5" src="img/vaca.jpg" alt="Una vaca usando VSCode.">
                 </section>
             </article>
 
@@ -90,8 +151,10 @@
     <footer class="container-fluid bg-success bg-gradient">
         <aside>
             <ul class="list-group bg-success bg-gradient p-4 text-center">
-                <li class="list-group-item bg-success bg-gradient text-muted">A6.2 Actividad sobre: “Buttons, Buttons Groups, Badges, Progress Bars, Spinners” con Bootstrap 5.</li>
-                <li class="list-group-item bg-success bg-gradient text-muted">Realizado para el módulo LENGUAJE DE MARCAS Y SISTEMAS DE GESTIÓN DE LA INFORMACIÓN</li>
+                <li class="list-group-item bg-success bg-gradient text-muted">A6.2 Actividad sobre: “Buttons, Buttons
+                    Groups, Badges, Progress Bars, Spinners” con Bootstrap 5.</li>
+                <li class="list-group-item bg-success bg-gradient text-muted">Realizado para el módulo LENGUAJE DE
+                    MARCAS Y SISTEMAS DE GESTIÓN DE LA INFORMACIÓN</li>
                 <li class="list-group-item bg-success bg-gradient text-muted">Por Gastón Bermúdez Rochietti</li>
                 <li class="list-group-item bg-success bg-gradient text-muted">Docente: Jonathan</li>
             </ul>
