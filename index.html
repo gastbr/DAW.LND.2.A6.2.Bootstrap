@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!--
+    La validación sale con varios warning (el mismo en diferentes puntos) y un error.
+    
+    El warning es "Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed". Está relacionado con que los section no tienen encabezados tipo H. Indica que si los section usados no necesitaran headings (como es mi caso, ya que el heading es del artículo), sería mejor usar div en vez de section. Mantengo el section para cumplir con la condición de usar todas las tags semánticas, en una situación real usaría div, como indica el validator.
+
+    El error indica que no se permite un div dentro de un button, pero fue la única manera que encontré de solucionar el problema del spinner centrado dentro del botón. Este error daría problemas de semántica, pero para la actividad consideré interesante mantener la solución del spinner centrado verticalmente, por mero interés autodidáctico.
+    
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,17 +112,17 @@
                 <section class="p-2">
                     <div class="d-flex flex-column flex-lg-row justify-content-around">
                         <button type="button" class="btn btn-primary m-1">Mensajes<span class="ms-2 badge bg-danger">4
-                                </sp>
+                                </span>
                         </button>
                         <button type="button" class="btn btn-info m-1">Notificaciones<span
                                 class="ms-2 badge bg-danger">32
-                                </sp></button>
-                        <button type="button" class="btn btn-dark m-1">Alertas<span class="ms-2 badge bg-danger">1</sp>
+                                </span></button>
+                        <button type="button" class="btn btn-dark m-1">Alertas<span class="ms-2 badge bg-danger">1</span>
                         </button>
                         <button type="button" class="btn btn-danger m-1">Avisos<span
-                                class="ms-2 badge bg-warning text-dark">55</sp></button>
+                                class="ms-2 badge bg-warning text-dark">55</span></button>
                         <button type="button" class="btn btn-success m-1">Importante<span
-                                class="ms-2 badge bg-warning text-dark">55</sp></button>
+                                class="ms-2 badge bg-warning text-dark">55</span></button>
                     </div>
                 </section>
             </article>
@@ -209,9 +218,7 @@
         </aside>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 
 </html>
